@@ -1,0 +1,20 @@
+.gallery-wrap .img-big-wrap img {
+    height: 450px;
+    max-height: 450px;
+    width: 225 px;
+    max-width: 225 px;
+    display: inline-block;
+
+}
+
+
+.gallery-wrap .img-small-wrap {
+    text-align: center;
+}
+.gallery-wrap .img-small-wrap img {
+    max-width: 700;
+    max-height: 400%;
+    object-fit: cover;
+    border-radius: 4px;
+
+}

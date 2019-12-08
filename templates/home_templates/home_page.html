@@ -1,0 +1,87 @@
+{% extends 'main.html' %}
+
+{% block title %}   {{ post.doc_name }}  {% endblock %}
+
+
+{% block body %}
+
+
+ <section class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5">
+            <h1>DOSYARIVE Nedir ?</h1>
+            <p class="lead">Okumaktan zevk aldığınız bir e-kitap var ve bu zevki başkalarının da tatmasını istiyorsunuz.
+                Hemen giriş yapın,yeni dosya oluşturun ve bu zevkten kimseyi mahrum bırakmayın.</p>
+              <p>Yok ben sadece istediğim dosyaya ulaşmak istiyorum diyorsanız hemen keşfetmeye başalayabilirsiniz.</p>
+
+            <p><a href="{% url 'post:index' %}" class="btn btn-primary shadow mr-2">Hemen Keşfet</a>
+                <a href="#" class="btn btn-outline-primary">Üye Ol</a></p>
+          </div>
+          <div class="col-lg-7 order-1 order-lg-2"><img src="https://i.hizliresim.com/P7dvMb.png" alt="..."
+                                                        class="img-fluid" style="max-width:90%"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Services-->
+    <section>
+      <div class="container">
+        <h2>Dosya Paylaşmak İstiyorum</h2>
+        <p class="text-muted mb-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor elit ante, ac malesuada nunc scelerisque pretium. Etiam pellentesque placerat sapien quis pellentesque. Duis cursus rutrum justo, eget porttitor sapien consequat dignissim. Etiam facilisis fringilla tincidunt. Curabitur venenatis hendrerit magna. Aenean ac finibus velit. Cras id urna sit amet metus pulvinar egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent id dolor volutpat, vestibulum risus nec, condimentum ipsum. Cras in dui eget arcu rutrum vehicula. Cras hendrerit tellus turpis, et elementum nunc faucibus a. Mauris nec efficitur neque. Mauris consectetur vel urna eu congue. Mauris ante lacus, dignissim eu diam at, faucibus hendrerit risus. Nulla efficitur volutpat tellus, id porta urna facilisis vel.
+
+
+        </p>
+        <hr>
+
+        <h2>Dosya İndirmek İstiyorum</h2>
+        <p class="text-muted mb-5">Fusce aliquam velit eu dui aliquam, quis condimentum eros dapibus. Phasellus viverra magna risus, ut finibus nisl vestibulum ut. Aenean maximus tempus mauris, quis ultrices sapien tincidunt volutpat. Nulla facilisi. Ut quis vehicula lectus, eget faucibus nunc. Morbi vitae diam consectetur, mollis ipsum at, cursus est. Mauris mi ante, fringilla ut tellus eget, bibendum luctus dolor. Pellentesque facilisis odio a egestas iaculis. Fusce elit dolor, mollis quis nibh non, sagittis cursus quam. Suspendisse a lobortis massa. Sed eget enim eget tortor lobortis egestas aliquet ut dui. Nam sit amet sapien at nisi porttitor ullamcorper sit amet eu risus.</p>
+
+   <div class="row">
+        <h3 class="header text-green mb-5 h1 text-center">Son Paylaşımlar</h3>
+    <div class="col-sm-10">
+    <div class="container">
+	<div class="row" style="padding:6%">
+    	<!-- BEGIN PRODUCTS -->
+		{% for post in posts %}
+			  		<div class="col-md-3 col-sm-6">
+    		<span class="thumbnail">
+      			<img src="{{ post.doc_image_link }}" alt="..." style="max-width:500;height:200px">
+      			<h4>{{ post.doc_name|safe|truncatechars:20 }} </h4>
+      					<p class="usrname">@admin</p>
+									<p>{{ post.doc_content|safe|truncatechars:150 }}. </p>
+      			<hr class="line">
+      			<div class="row">
+      				<div class="col-md-6 col-sm-6">
+						<span class="glyphicon glyphicon-eye-open"></span> {{ post.id }}
+											<span class="glyphicon glyphicon-cloud-download"></span> {{ post.id }}
+      				</div>
+      				<div class="col-md-6 col-sm-6">
+      					<a href="{{ post.get_detail_url }}" class="btn btn-default right"> İncele</a>
+      				</div>
+
+      			</div>
+    		</span>
+  		</div>
+
+		{% endfor %}
+
+                    <center><p class="col-sm-8 col-sm-offset-2">
+                <a href="{% url 'post:index' %}" class="btn btn-block btn-lg shadow mr-2" style="background-color:#3498db;color:#fff">Hemen Keşfet</a></p></center>
+
+  		<!-- END PRODUCTS -->
+	</div>
+
+</div>
+
+  </div>
+      </div>
+
+
+      </div>
+    </section>
+
+
+
+{% endblock %}
+

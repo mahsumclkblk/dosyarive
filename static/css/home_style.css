@@ -1,0 +1,28 @@
+/**********************
+/***** Services *******
+/*********************/
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+#our-services{
+	padding: 60px 0;
+}
+
+#our-services h3,
+#our-services h5{
+    color: #4b8abf!important;
+}
+
+#our-services a{
+    color: #4b8abf  !important;
+    text-decoration:none;
+}
+
+#our-services .feature .icon {
+    border-radius: 50%;
+    min-width: 65px;
+    height: 65px;
+    line-height: 65px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(33,37,41,.1), 0 7px 14px rgba(33,37,41,.1);
+    font-size: 27px;
+    color: #4b8abf!important;
+}
